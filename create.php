@@ -13,7 +13,7 @@
 	  $id=mysqli_insert_id($con);
 	  $_SESSION["username"]=$_POST['name'];
 	  if($res){
-		  header("location:index.php?id=$id");
+		  header("location:show.php?id=$id");
 	  }
 	  else echo "false";
   }
@@ -32,10 +32,15 @@
    confirm:<br>
    <input type="password" name="confirm_password" value=""><br>
    gender:<br>
-   <input type="text" name="gender" value=""><br>
+   <select name="gender">
+	<option value="1" selected>male</option>
+	<option value="2">female</option>
+	<option value="3">both</option>
+   </select><br>
    age:<br>
-   <input type="text" name="age" value=""><br><br>
    
+    <input type="radio" name="age" value="18" checked> 18<br>
+    <input type="radio" name="age" value="21"> 21<br>
    <input type="submit" name="save">
    </form>
  </body>
